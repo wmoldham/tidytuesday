@@ -163,7 +163,7 @@ p1 + p2 + p3 + p4 + p5 +
   plot_annotation(
     title = "Web Page Metrics",
     subtitle = "httparchive.org",
-    caption = "William Oldham\n"
+    caption = "William Oldham\ngithub.com/wmoldham/tidytuesday\n2022-11-15"
   ) +
   plot_layout(
     ncol = 1,
@@ -174,5 +174,16 @@ p1 + p2 + p3 + p4 + p5 +
     plot.title = element_text(face = "bold"),
     plot.subtitle = element_text(face = "italic"),
     plot.caption = element_text(face = "italic"),
-    legend.position = "bottom"
+    legend.position = "bottom",
+    legend.margin = margin(t = -8)
   )
+
+ggsave(
+  filename = "2022-11-15.png",
+  path = "figures",
+  device = ragg::agg_png,
+  width = 15,
+  height = 22.5,
+  units = "cm",
+  dpi = 300
+)
